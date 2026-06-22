@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>FreshBot Chatbot</title>
+
+  <style>
+    /* زر فتح الشات */
+    .chat-toggle{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      background:#31d510;
+      color:#fff;
+      border:none;
+      font-size:22px;
+      cursor:pointer;
+      box-shadow:0 6px 15px #00000033;
+      z-index:1000;
+    }
+
+    /* صندوق الشات */
+    .chatbot{
+      position:fixed;
+      right:20px;
+      bottom:90px;
+      width:320px;
+      height:420px;
+      border-radius:15px;
+      box-shadow:0 8px 20px #00000033;
+      background:#fff;
+      display:none;
+      flex-direction:column;
+      font-family:Arial;
+      z-index:1000;
+    }
+
+    .chatbot.open{
+      display:flex;
+    }
+
+    .chat-header{
+      background:#31d510;
+      color:#fff;
+      padding:12px;
+      font-weight:bold;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-radius:15px 15px 0 0;
+    }
+
+    .close-chat{
+      cursor:pointer;
+    }
+
+    .chat-body{
+      flex:1;
+      padding:10px;
+      overflow-y:auto;
+      background:#f4f6f8;
+    }
+
+    .bot-msg,.user-msg{
+      padding:8px 12px;
+      border-radius:12px;
+      margin-bottom:8px;
+      max-width:80%;
+      font-size:14px;
+    }
+
+    .bot-msg{
+      background:#e9ecef;
+    }
+
+    .user-msg{
+      background:#31d510;
+      color:#fff;
+      margin-left:auto;
+    }
+
+    .chat-input{
+      display:flex;
+      gap:5px;
+      padding:10px;
+      border-top:1px solid #ddd;
+    }
+
+    .chat-input input{
+      flex:1;
+      padding:6px;
+      border-radius:8px;
+      border:1px solid #ccc;
+    }
+
+    .chat-input button{
+      background:#31d510;
+      color:#fff;
+      border:none;
+      padding:6px 12px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- زر فتح الشات -->
+<button class="chat-toggle" id="chatToggle">💬</button>
+
+<!-- الشات بوت -->
+<div class="chatbot" id="chatbot">
+  <div class="chat-header">
+    FreshBot 🍎
+    <span class="close-chat" id="closeChat">✖</span>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <div class="bot-msg">
+      أهلاً 👋 أنا FreshBot، اسألني عن الفاكهة والخضار
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="اكتب سؤالك...">
+    <button onclick="sendMessage()">إرسال</button>
+  </div>
+</div>
+
+<script>
+  const chatToggle = document.getElementById("chatToggle");
+  const chatbot = document.getElementById("chatbot");
+  const closeChat = document.getElementById("closeChat");
+  const chatBody = document.getElementById("chatBody");
+  const userInput = document.getElementById("userInput");
+
+  chatToggle.onclick = () => chatbot.classList.toggle("open");
+  closeChat.onclick = () => chatbot.classList.remove("open");
+
+const answers = {
+  // ───── ترحيب حقيقي ─────
+  "السلام عليكم": "وعليكم السلام ورحمة الله 🌿 تحب أساعدك في إيه؟",
+  "مساء الخير": "مساء النور 😊 تحت أمرك",
+  "صباح الخير": "صباح الفل 🌞",
+  "حد موجود": "أيوه موجودين 👍 اتفضل",
+  "في حد يرد": "أيوه معاك FreshBot 😊",
+
+  // ───── أسئلة عن البيع ─────
+  "انتوا بتبيعوا ايه بالظبط": "بنبيع فاكهة وخضار طازة، وكمان بنستلم فائض لإعادة البيع.",
+  "عندكم فاكهة طازة": "أيوه كل الفاكهة طازة ومختارة بعناية 🍎🍌",
+  "الخضار عندكم طازة": "أيوه خضارنا طازة ويومي 🥬🍅",
+  "ايه المتوفر النهارده": "المتاح بيختلف يوم بيوم، قولي عايز إيه وأنا أأكدلك.",
+  "المنتجات بتاعتكم منين": "منتجاتنا جاية مباشرة من المزارع 👨‍🌾",
+
+  // ───── أسئلة الأسعار ─────
+  "الاسعار كام": "الأسعار بتختلف حسب المنتج والكمية، قولي محتاج إيه؟",
+  "سعر الكيلو كام": "حدد الصنف وأنا أقولك السعر الحالي.",
+  "في خصم على الكميات": "أيوه، الكميات الكبيرة ليها سعر خاص 💰",
+  "بتبيعوا جمله": "أيوه بنبيع جملة بأسعار للتجار.",
+  "ينفع قطاعي": "طبعًا، بنبيع قطاعي كمان.",
+
+  // ───── أسئلة الطلب ─────
+  "ازاي اطلب من عندكم": "ابعتلنا اسم المنتج، الكمية، ومكان التوصيل.",
+  "ممكن اطلب دلوقتي": "أيوه طبعًا 👍 قولي طلبك",
+  "في حد ادنى للطلب": "لا للقطاعي، الجملة حسب الاتفاق.",
+  "ممكن احجز كميه": "أيوه ممكن تحجز قبل الاستلام.",
+
+  // ───── أسئلة التوصيل (بجد 👇) ─────
+  "بتوصلوا لحد البيت": "أيوه بنوصل لحد باب البيت 🛵",
+  "التوصيل متاح": "أيوه التوصيل متاح داخل المحافظة.",
+  "التوصيل بيبقى امتى": "غالبًا في نفس اليوم.",
+  "بياخد وقت قد ايه": "من ساعتين لـ 24 ساعة حسب الضغط.",
+  "التوصيل بكام": "سعر التوصيل بيختلف حسب العنوان.",
+  "بتوصلوا فين": "بنغطي معظم مناطق المحافظة.",
+  "ينفع استلام منكم": "أيوه ممكن الاستلام من المكان.",
+
+  // ───── أسئلة إعادة البيع ─────
+  "عندي فاكهة زيادة اعمل ايه": "تواصل معانا ونستلمها منك.",
+  "بتستلموا فائض": "أيوه بنستلم الفائض الصالح للبيع.",
+  "بتتعاملوا مع مزارعين": "أيوه بنرحب بالتعامل مع المزارعين 🤝",
+  "عندي خضار كتير": "قولي الكمية والنوع ونظبط الاستلام.",
+  "بتشتروا من تجار": "أيوه حسب الجودة والكمية.",
+
+  // ───── الدفع ─────
+  "الدفع ازاي": "الدفع كاش عند الاستلام 💵",
+  "فيزا ولا كاش": "حاليًا الدفع كاش فقط.",
+  "بدفع امتى": "عند الاستلام مباشرة.",
+
+  // ───── أوقات العمل ─────
+  "شغالين امتى": "شغالين يوميًا من 9 صباحًا لـ 9 مساءً.",
+  "حد بيرد دلوقتي": "أيوه معاك 😊",
+  "اجازة امتى": "مفيش، شغالين طول الأسبوع.",
+
+  // ───── ختام ─────
+  "تمام شكرا": "العفو 🌱 أي خدمة",
+  "تسلم": "تحت أمرك 😊",
+  "مع السلامه": "في أمان الله 🌿",
+  "هكلمكم بعدين": "مستنيينك في أي وقت 👌"
+};
+
+  function sendMessage(){
+    const text = userInput.value.trim();
+    if(!text) return;
+
+    const userMsg = document.createElement("div");
+    userMsg.className = "user-msg";
+    userMsg.innerText = text;
+    chatBody.appendChild(userMsg);
+
+    let reply = "مش فاهم سؤالك 🤔 ممكن توضحه أكتر؟";
+    for(let key in answers){
+      if(text.includes(key)){
+        reply = answers[key];
+      }
+    }
+
+    const botMsg = document.createElement("div");
+    botMsg.className = "bot-msg";
+    botMsg.innerText = reply;
+
+    setTimeout(()=>{
+      chatBody.appendChild(botMsg);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    },300);
+
+    userInput.value = "";
+  }
+</script>
+
+</body>
+</html>
+

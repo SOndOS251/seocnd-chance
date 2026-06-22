@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرصة ثانية | اتصل بنا</title>
+
+    <!-- Bootstrap 5 RTL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- <style>
+        :root {
+            --primary-green: #2d6a4f;
+            --dark-green: #1b4332;
+            --soft-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--soft-bg);
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--primary-green) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: #444 !important;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green) !important;
+        }
+
+        .contact-hero {
+            background: linear-gradient(rgba(27,67,50,0.8), rgba(27,67,50,0.8)),
+            url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=1500');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+        }
+
+        .card-custom {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            margin-top: -50px;
+            padding: 40px;
+        }
+
+        .form-label {
+            font-weight: 600;
+        }
+
+        .form-control {
+            border-radius: 12px;
+            padding: 14px;
+        }
+
+        .main-footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 80px 0 30px;
+            margin-top: 100px;
+        }
+
+        .footer-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .social-icons a {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+    </style> -->
+</head>
+
+<body>
+
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="./index.html">
+                <i class="fas fa-leaf ms-2"></i> فرصة ثانية
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto" style="margin-right: 140px;">
+                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#compost">دليل السماد</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./learn.html">تعلم عن الهدر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#shop">المتجر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">شركاؤنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="./farmers.html" class="btn btn-success rounded-pill px-4 me-lg-3">للمزارعين</a>
+                    <a href="./game.html" class="btn btn-outline-success rounded-pill px-4 me-lg-2">لنلعب!</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- Hero -->
+<header class="contact-hero">
+    <div class="container">
+        <h1 class="display-4 fw-bold">تواصل معنا</h1>
+        <p class="lead text-white-50">هل لديك استفسار أو اقتراح؟ نحن هنا لمساعدتك</p>
+    </div>
+</header>
+
+<!-- Contact Form -->
+<div class="container mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card-custom">
+                <h3 class="fw-bold mb-4">أرسل رسالة</h3>
+
+                <form>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="form-label">الاسم الكامل</label>
+                            <input type="text" class="form-control" placeholder="أدخل اسمك" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">البريد الإلكتروني</label>
+                            <input type="email" class="form-control" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="p-3 bg-light rounded-4 border">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="charityCheck">
+                                    <label class="form-check-label fw-bold text-success ms-2">
+                                        أمثل جمعية خيرية أو دار أيتام
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">موضوع الرسالة</label>
+                            <select class="form-select">
+                                <option>استفسار عام</option>
+                                <option>دعم الجمعيات الخيرية</option>
+                                <option>طلبات بالجملة</option>
+                                <option>شراكة</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label">رسالتك</label>
+                            <textarea class="form-control" rows="5" placeholder="اكتب رسالتك هنا..."></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-success btn-lg w-100 rounded-pill">
+                                إرسال <i class="fas fa-paper-plane ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="main-footer text-center">
+    <div class="container">
+        <p class="mb-0">© 2025 فرصة ثانية — جميع الحقوق محفوظة</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

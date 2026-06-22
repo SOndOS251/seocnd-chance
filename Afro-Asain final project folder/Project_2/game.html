@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرصة ثانية | تحدي فرز الطعام</title>
+    <!-- Bootstrap CSS (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="./index.html">
+                <i class="fas fa-leaf ms-2"></i> فرصة ثانية
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto" style="margin-right: 140px;">
+                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#compost">دليل السماد</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./learn.html">تعلم عن الهدر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#shop">المتجر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">شركاؤنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="./farmers.html" class="btn btn-success rounded-pill px-4 me-lg-3">للمزارعين</a>
+                    <a href="./game.html" class="btn btn-outline-success rounded-pill px-4 me-lg-2">لنلعب!</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- قسم الهيرو للعبة -->
+    <header class="game-hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold">تحدي فرز الطعام 🍎</h1>
+            <p class="lead mb-4">ساعدنا في تقليل الهدر! قم بفرز المحاصيل الطازجة للبيع والمحاصيل الفائضة للتبرع.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <div class="badge bg-success p-2 px-3 fs-6"><i class="fas fa-star ms-1"></i> الهدف: 80 نقطة</div>
+                <div class="badge bg-warning text-dark p-2 px-3 fs-6"><i class="fas fa-gift ms-1"></i> الجائزة: خصم 25%</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- منطقة اللعبة -->
+    <section id="game-wrapper">
+        <div class="container">
+            <div id="score-panel">
+                <div class="text-success"><i class="fas fa-trophy ms-2"></i>النقاط: <span id="score">0</span> / 80</div>
+                <div class="text-danger"><i class="fas fa-clock ms-2"></i>الوقت: <span id="timer">30</span> ثانية</div>
+            </div>
+
+            <div id="game-container">
+                <!-- صناديق الفرز -->
+                <div id="bin-surplus" class="bin">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>الفائض</span>
+                </div>
+                <div id="bin-fresh" class="bin">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>طازج</span>
+                </div>
+
+                <!-- واجهة البداية/النهاية -->
+                <div id="overlay" class="game-overlay">
+                    <div id="overlay-content">
+                        <i class="fas fa-gamepad fa-3x text-success mb-3"></i>
+                        <h2 class="fw-bold">هل أنت مستعد لإنقاذ الطعام؟</h2>
+                        <p class="mb-4">اسحب الثمار التي بها "بقع داكنة" إلى صندوق <b>الفائض</b>.<br>الثمار المثالية تذهب إلى صندوق <b>طازج</b>.</p>
+                        <button onclick="startGame()" class="btn btn-success btn-lg px-5 rounded-pill shadow">ابدأ اللعب الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Modern Footer Section -->
+    <footer class="main-footer">
+        <div class="container footer-links">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand mb-3">
+                        <i class="fas fa-leaf"></i> فرصة ثانية
+                    </div>
+                    <p class="small">نؤمن بأن كل ثمرة تستحق فرصة ثانية لتطعم عائلة. انضم إلينا في الحد من هدر الطعام وحماية بيئتنا.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2 me-lg-auto">
+                    <h6>روابط سريعة</h6>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#impact">تأثيرنا</a></li>
+                        <li><a href="#shop">المتجر</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6>الدعم</h6>
+                    <ul>
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#">سياسة الشحن</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6>اتصل بنا</h6>
+                    <ul class="small">
+                        <li><i class="fas fa-map-marker-alt ms-2 text-success"></i> 123 شارع الأخضر، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone ms-2 text-success"></i> +20 123 456 7890</li>
+                        <li><i class="fas fa-envelope ms-2 text-success"></i> hello@secondchance.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <p class="mb-0">© 2025 <span class="text-success">فرصة ثانية</span>. جميع الحقوق محفوظة. صُمم من أجل كوكب أفضل.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const container = document.getElementById('game-container');
+        const scoreEl = document.getElementById('score');
+        const timerEl = document.getElementById('timer');
+        const overlay = document.getElementById('overlay');
+        const overlayContent = document.getElementById('overlay-content');
+        
+        let score = 0;
+        let timeLeft = 30;
+        let gameActive = false;
+        let timerInterval;
+
+        const foods = ['🍎', '🥦', '🥕', '🍅', '🥔', '🍐', '🍋', '🍑'];
+
+        function startGame() {
+            score = 0;
+            timeLeft = 30;
+            scoreEl.textContent = '0';
+            timerEl.textContent = '30';
+            gameActive = true;
+            overlay.style.display = 'none';
+            spawnFood();
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerEl.textContent = timeLeft;
+                if (timeLeft <= 0) endGame();
+            }, 1000);
+        }
+
+        function spawnFood() {
+            if (!gameActive) return;
+            document.querySelectorAll('.food-item').forEach(f => f.remove());
+
+            const emoji = foods[Math.floor(Math.random() * foods.length)];
+            const isSurplus = Math.random() > 0.5;
+
+            const food = document.createElement('div');
+            food.className = 'food-item' + (isSurplus ? ' is-surplus' : '');
+            food.innerHTML = emoji + '<div class="surplus-mark"></div>';
+            food.style.left = '45%';
+            food.style.top = '100px';
+            
+            container.appendChild(food);
+            makeDraggable(food, isSurplus);
+        }
+
+        function makeDraggable(el, isSurplus) {
+            let p1=0, p2=0, p3=0, p4=0;
+            const start = (e) => {
+                const touch = e.type === 'touchstart' ? e.touches[0] : e;
+                p3 = touch.clientX; p4 = touch.clientY;
+                document.onmousemove = move; document.ontouchmove = move;
+                document.onmouseup = end; document.ontouchend = end;
+            };
+            const move = (e) => {
+                const touch = e.type === 'touchmove' ? e.touches[0] : e;
+                p1 = p3 - touch.clientX; p2 = p4 - touch.clientY;
+                p3 = touch.clientX; p4 = touch.clientY;
+                el.style.top = (el.offsetTop - p2) + "px";
+                el.style.left = (el.offsetLeft - p1) + "px";
+            };
+            const end = () => {
+                document.onmousemove = null; document.ontouchmove = null;
+                checkDrop(el, isSurplus);
+            };
+            el.onmousedown = start; el.ontouchstart = start;
+        }
+
+        function checkDrop(el, isSurplus) {
+            const r = el.getBoundingClientRect();
+            const fresh = document.getElementById('bin-fresh').getBoundingClientRect();
+            const surplus = document.getElementById('bin-surplus').getBoundingClientRect();
+
+            // التحقق من الصناديق مع مراعاة اتجاه RTL
+            if (r.right > fresh.left && r.left < fresh.right && r.bottom > fresh.top) {
+                processResult(el, !isSurplus);
+            } else if (r.right > surplus.left && r.left < surplus.right && r.bottom > surplus.top) {
+                processResult(el, isSurplus);
+            } else {
+                el.style.top = '100px'; el.style.left = '45%';
+            }
+        }
+
+        function processResult(el, correct) {
+            if (correct) {
+                score += 10;
+                scoreEl.textContent = score;
+                el.style.transform = 'scale(0)';
+                setTimeout(() => { el.remove(); spawnFood(); }, 200);
+            } else {
+                score = Math.max(0, score - 5);
+                scoreEl.textContent = score;
+                container.style.backgroundColor = '#fee2e2';
+                setTimeout(() => container.style.backgroundColor = 'white', 200);
+                el.style.top = '100px'; el.style.left = '45%';
+            }
+        }
+
+      function endGame() {
+  gameActive = false;
+  clearInterval(timerInterval);
+  overlay.style.display = 'flex';
+
+  // ====== Coupon tiers حسب السكور ======
+  // 80+  => 15%
+  // 110+ => 20%
+  // 140+ => 25%
+  let coupon = null;
+
+  if (score >= 140) coupon = { code: "GAME25", label: "خصم 25%", type: "percent", value: 25 };
+  else if (score >= 110) coupon = { code: "GAME20", label: "خصم 20%", type: "percent", value: 20 };
+  else if (score >= 80) coupon = { code: "GAME15", label: "خصم 15%", type: "percent", value: 15 };
+
+  // ====== helper: save coupon to localStorage ======
+  function saveWonCoupon(code) {
+    const keyWon = "sc_won_coupons_v1";
+    const keyApplied = "sc_coupon_v1";
+
+    const won = JSON.parse(localStorage.getItem(keyWon) || "[]");
+    const already = won.includes(code);
+
+    if (!already) {
+      won.push(code);
+      localStorage.setItem(keyWon, JSON.stringify(won));
+    }
+
+    // خليه يتطبق تلقائيًا في الشوب
+    localStorage.setItem(keyApplied, code);
+
+    return already;
+  }
+
+  // ====== helper: copy to clipboard ======
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    // fallback
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.top = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+    return Promise.resolve();
+  }
+
+  if (coupon) {
+    const already = saveWonCoupon(coupon.code);
+
+    overlayContent.innerHTML = `
+      <i class="fas fa-trophy fa-4x text-warning mb-3"></i>
+      <h2 class="fw-bold text-success">عمل رائع!</h2>
+      <p class="mb-2">لقد أنقذت الكثير من الطعام 🌱</p>
+      <p class="small text-muted">${already ? "ℹ️ أنت حصلت على نفس الكوبون قبل كده، لكنه اتفعل للمتجر تاني." : "🎁 مبروك! كسبت كوبون جديد وتم تفعيله للمتجر."}</p>
+
+      <div class="promo-card">
+        <span class="text-muted small d-block">كود الخصم</span>
+        <div class="promo-code" id="couponCode">${coupon.code}</div>
+        <p class="mb-0 mt-2">${coupon.label} على طلبك القادم</p>
+      </div>
+
+      <div class="d-flex gap-2 justify-content-center flex-wrap">
+        <button id="copyBtn" class="btn btn-outline-success rounded-pill px-4">
+          <i class="fas fa-copy ms-1"></i> نسخ الكود
+        </button>
+        <a href="./shop.html" class="btn btn-success rounded-pill px-4">
+          <i class="fas fa-cart-shopping ms-1"></i> استخدمه في المتجر
+        </a>
+        <button onclick="startGame()" class="btn btn-outline-dark rounded-pill px-4">
+          العب مرة أخرى
+        </button>
+      </div>
+    `;
+
+    // بعد ما نرسم الـ HTML نربط زر النسخ
+    setTimeout(() => {
+      const copyBtn = document.getElementById("copyBtn");
+      const codeEl = document.getElementById("couponCode");
+
+      if (copyBtn && codeEl) {
+        copyBtn.addEventListener("click", async () => {
+          await copyText(codeEl.textContent.trim());
+          copyBtn.innerHTML = `<i class="fas fa-check ms-1"></i> تم النسخ`;
+        });
+      }
+    }, 0);
+
+  } else {
+    overlayContent.innerHTML = `
+      <i class="fas fa-heart-broken fa-4x text-danger mb-3"></i>
+      <h2 class="fw-bold text-danger">حاول مرة أخرى!</h2>
+      <p>لقد حصلت على ${score} نقطة.</p>
+      <p class="small text-muted mb-4">اجمع 80 نقطة على الأقل عشان تكسب كوبون خصم 🎮</p>
+      <div class="d-flex gap-2 justify-content-center flex-wrap">
+        <button onclick="startGame()" class="btn btn-success btn-lg px-5 rounded-pill shadow">جرب مرة ثانية</button>
+        <a href="./shop.html" class="btn btn-outline-success btn-lg px-5 rounded-pill">اذهب للمتجر</a>
+      </div>
+    `;
+  }
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرصة ثانية | إحياء جمال الطبيعة</title>
+    <!-- Bootstrap CSS (RTL Version) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Cairo for Arabic) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+           /* زر فتح الشات */
+    .chat-toggle{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      background:#31d510;
+      color:#fff;
+      border:none;
+      font-size:22px;
+      cursor:pointer;
+      box-shadow:0 6px 15px #00000033;
+      z-index:1000;
+    }
+
+    /* صندوق الشات */
+    .chatbot{
+      position:fixed;
+      right:20px;
+      bottom:90px;
+      width:320px;
+      height:420px;
+      border-radius:15px;
+      box-shadow:0 8px 20px #00000033;
+      background:#fff;
+      display:none;
+      flex-direction:column;
+      font-family:Arial;
+      z-index:1000;
+    }
+
+    .chatbot.open{
+      display:flex;
+    }
+
+    .chat-header{
+      background:#31d510;
+      color:#fff;
+      padding:12px;
+      font-weight:bold;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-radius:15px 15px 0 0;
+    }
+
+    .close-chat{
+      cursor:pointer;
+    }
+
+    .chat-body{
+      flex:1;
+      padding:10px;
+      overflow-y:auto;
+      background:#f4f6f8;
+    }
+
+    .bot-msg,.user-msg{
+      padding:8px 12px;
+      border-radius:12px;
+      margin-bottom:8px;
+      max-width:80%;
+      font-size:14px;
+    }
+
+    .bot-msg{
+      background:#e9ecef;
+    }
+
+    .user-msg{
+      background:#31d510;
+      color:#fff;
+      margin-left:auto;
+    }
+
+    .chat-input{
+      display:flex;
+      gap:5px;
+      padding:10px;
+      border-top:1px solid #ddd;
+    }
+
+    .chat-input input{
+      flex:1;
+      padding:6px;
+      border-radius:8px;
+      border:1px solid #ccc;
+    }
+
+    .chat-input button{
+      background:#31d510;
+      color:#fff;
+      border:none;
+      padding:6px 12px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+        :root {
+            --primary-color: #4CAF50;
+            --dark-green: #2E7D32;
+            --earth-brown: #8D6E63;
+            --soft-bg: #f9fbf9;
+            --accent-orange: #FF9800;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--soft-bg);
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1300&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .section-padding { padding: 80px 0; }
+        .section-title { font-weight: 700; margin-bottom: 40px; color: var(--dark-green); text-align: center; }
+
+        .card-custom {
+            border: none;
+            border-radius: 20px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            background: white;
+            overflow: hidden;
+            height: 100%;
+        }
+        .card-custom:hover { transform: translateY(-10px); }
+
+        .impact-icon { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
+        .step-number {
+            width: 40px; height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+        .bg-gradient-green {
+            background: linear-gradient(135deg, var(--dark-green), var(--primary-color));
+            color: white;
+        }
+
+
+        /* Compost Moving Steps (Marquee) */
+.compost-marquee-wrap {
+  margin-top: -35px; /* عشان يركب شوية على الهيرو بشكل شيك */
+  position: relative;
+  z-index: 5;
+}
+
+.compost-marquee {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(76,175,80,.22);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  overflow: hidden;
+  position: relative;
+  padding: 14px 0;
+  backdrop-filter: blur(10px);
+}
+
+.compost-marquee::before,
+.compost-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 90px;
+  z-index: 2;
+  pointer-events: none;
+}
+.compost-marquee::before {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+.compost-marquee::after {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.marquee-track {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: marqueeMove 22s linear infinite;
+  padding: 0 14px;
+}
+
+.compost-marquee:hover .marquee-track { animation-play-state: paused; }
+
+@keyframes marqueeMove {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(50%); } /* هنكرّر العناصر عشان تبقى حركة لا نهائية */
+}
+
+.marquee-card {
+  min-width: 260px;
+  background: white;
+  border: 1px solid rgba(76,175,80,.18);
+  border-radius: 18px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+  transition: transform .25s;
+}
+.marquee-card:hover { transform: translateY(-3px); }
+
+.marquee-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(76,175,80,.10);
+  color: var(--dark-green);
+  font-size: 1.4rem;
+  flex: 0 0 auto;
+}
+.marquee-title { font-weight: 700; margin: 0; }
+.marquee-text { margin: 0; font-size: .86rem; color: #6c757d; }
+
+.step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(76,175,80,.10);
+  color: var(--dark-green);
+  font-size: .8rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* احترام تفضيل تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+
+
+
+        /* Compost Section Styles */
+        .compost-step {
+            padding: 20px;
+            border-radius: 15px;
+            background: #fff;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        /* Modern Footer Style */
+        .main-footer {
+            background-color: #1a1a1a;
+            color: #d1d1d1;
+            padding-top: 60px;
+        }
+        .footer-brand { color: var(--primary-color); font-weight: 700; font-size: 1.5rem; }
+        .footer-links h6 { color: white; font-weight: 600; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; padding: 0; }
+        .footer-links ul li { margin-bottom: 10px; }
+        .footer-links ul li a { color: #d1d1d1; text-decoration: none; transition: 0.3s; }
+        .footer-links ul li a:hover { color: var(--primary-color); padding-right: 5px; }
+        .social-icons a {
+            width: 35px; height: 35px;
+            background: #333;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 50%; color: white; text-decoration: none;
+            margin-left: 10px; transition: 0.3s;
+        }
+        .social-icons a:hover { background: var(--primary-color); transform: translateY(-3px); }
+        .footer-bottom { background: #111; padding: 20px 0; margin-top: 50px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <!-- زر فتح الشات -->
+<button class="chat-toggle" id="chatToggle">💬</button>
+
+<!-- الشات بوت -->
+<div class="chatbot" id="chatbot">
+  <div class="chat-header">
+    FreshBot 🍎
+    <span class="close-chat" id="closeChat">✖</span>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <div class="bot-msg">
+      أهلاً 👋 أنا FreshBot، اسألني عن الفاكهة والخضار
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="اكتب سؤالك...">
+    <button onclick="sendMessage()">إرسال</button>
+  </div>
+</div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="#">
+                <i class="fas fa-leaf ms-2"></i> فرصة ثانية
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto" style="margin-right: 140px;">
+                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#compost">دليل السماد</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./learn.html">تعلم عن الهدر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#shop">المتجر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">شركاؤنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="./farmers.html" class="btn btn-success rounded-pill px-4 me-lg-3">للمزارعين</a>
+                    <a href="./game.html" class="btn btn-outline-success rounded-pill px-4 me-lg-2">لنلعب!</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section id="home" class="hero text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">لا للهدر.. نعم لجمال الطبيعة</h1>
+            <p class="lead mb-4">نعيد تعريف "الجودة" من خلال إنقاذ المحاصيل الصالحة للأكل وتقديمها بأسعار عادلة.</p>
+            <a href="./shop.html" class="btn btn-success btn-lg px-5 rounded-pill shadow">ابدأ التسوق</a>
+        </div>
+    </section>
+
+
+    <!-- Compost Moving Steps Marquee -->
+<section class="compost-marquee-wrap">
+  <div class="container">
+    <div class="compost-marquee">
+      <div class="marquee-track" id="marqueeTrack">
+
+        <!-- Step cards (مرة) -->
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-box-open"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-1"></i> جمع وفرز</div>
+            <p class="marquee-title">نستلم الفائض</p>
+            <p class="marquee-text">نجمع غير المناسب للسوبر ماركت ونفرزه.</p>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-scissors"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-2"></i> تجهيز</div>
+            <p class="marquee-title">تقطيع وموازنة</p>
+            <p class="marquee-text">مزج “خضر” نيتروجين + “بني” كربون.</p>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-droplet"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-3"></i> رطوبة</div>
+            <p class="marquee-title">ضبط الرطوبة</p>
+            <p class="marquee-text">نحافظ على رطوبة مناسبة لتسريع التحلل.</p>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-wind"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-4"></i> تهوية</div>
+            <p class="marquee-title">تقليب وتهوية</p>
+            <p class="marquee-text">نهوّي لتقليل الروائح ورفع الجودة.</p>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-hourglass-half"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-5"></i> نضج</div>
+            <p class="marquee-title">مرحلة النضج</p>
+            <p class="marquee-text">لحد ما يتحول لـ “ذهب أسود” غني.</p>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-bag-shopping"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-6"></i> تعبئة</div>
+            <p class="marquee-title">تعبئة وبيع</p>
+            <p class="marquee-text">نعبّي السماد ونبيعه للمزارعين.</p>
+          </div>
+        </div>
+
+        <!-- نفس الخطوات تتكرر (للـ loop) -->
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-box-open"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-1"></i> جمع وفرز</div>
+            <p class="marquee-title">نستلم الفائض</p>
+            <p class="marquee-text">نجمع غير المناسب للسوبر ماركت ونفرزه.</p>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-scissors"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-2"></i> تجهيز</div>
+            <p class="marquee-title">تقطيع وموازنة</p>
+            <p class="marquee-text">مزج “خضر” نيتروجين + “بني” كربون.</p>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-droplet"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-3"></i> رطوبة</div>
+            <p class="marquee-title">ضبط الرطوبة</p>
+            <p class="marquee-text">نحافظ على رطوبة مناسبة لتسريع التحلل.</p>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-wind"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-4"></i> تهوية</div>
+            <p class="marquee-title">تقليب وتهوية</p>
+            <p class="marquee-text">نهوّي لتقليل الروائح ورفع الجودة.</p>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-hourglass-half"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-5"></i> نضج</div>
+            <p class="marquee-title">مرحلة النضج</p>
+            <p class="marquee-text">لحد ما يتحول لـ “ذهب أسود” غني.</p>
+          </div>
+        </div>
+
+        <div class="marquee-card">
+          <div class="marquee-icon"><i class="fas fa-bag-shopping"></i></div>
+          <div>
+            <div class="step-pill"><i class="fas fa-6"></i> تعبئة</div>
+            <p class="marquee-title">تعبئة وبيع</p>
+            <p class="marquee-text">نعبّي السماد ونبيعه للمزارعين.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="text-center mt-3">
+      <a href="#compost" class="btn btn-outline-success rounded-pill px-4">
+        اعرف أكتر عن التسميد <i class="fas fa-arrow-left ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- 2. About Us Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-4 shadow" alt="من نحن">
+                </div>
+                <div class="col-lg-6 pe-lg-5">
+                    <h2 class="section-title text-start mb-3">من نحن</h2>
+                    <p class="lead text-success fw-bold">نعطي الطبيعة فرصة ثانية، صندوقاً تلو الآخر.</p>
+                    <p>في <strong>فرصة ثانية</strong>، نؤمن بأن هدر الطعام هو تحدٍ يمكننا حله معاً. كل عام، يتم التخلص من أطنان من الفواكه والخضروات الصحية فقط لأنها لا تستوفي المعايير الجمالية الصارمة.</p>
+                    <p>مهمتنا هي سد الفجوة بين المزارعين والمستهلكين الواعين. نحن ننقذ الفائض ونحول النفايات العضوية التي لا مفر منها إلى سماد عالي الجودة، مما يخلق اقتصاداً دائرياً يحترم كوكبنا.</p>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <h4 class="fw-bold text-success">رؤيتنا</h4>
+                            <p class="small">عالم لا يضيع فيه أي طعام صحي هباءً.</p>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="fw-bold text-success">رسالتنا</h4>
+                            <p class="small">تمكين المزارعين وتوفير غذاء صحي بأسعار معقولة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Compost Section -->
+    <section id="compost" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">سحر التسميد العضوي</h2>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-4 shadow mb-4" alt="سماد">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h3 class="fw-bold text-dark mb-3">لماذا التسميد؟</h3>
+                    <p>عندما ينتهي هدر الطعام في المكبات، فإنه ينتج غاز الميثان الضار. التسميد يحول تلك النفايات إلى "الذهب الأسود" الذي يغذي التربة، يساعد في الاحتفاظ بالرطوبة، ويكافح أمراض النباتات.</p>
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="fas fa-check-circle text-success mt-1 ms-3"></i>
+                        <p class="mb-0"><strong>تقليل البصمة الكربونية:</strong> إبقاء النفايات العضوية بعيداً عن المكبات.</p>
+                    </div>
+                    <div class="d-flex align-items-start mb-3">
+                        <i class="fas fa-check-circle text-success mt-1 ms-3"></i>
+                        <p class="mb-0"><strong>سماد طبيعي:</strong> لا حاجة للمواد الكيميائية الضارة في حديقتك.</p>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-check-circle text-success mt-1 ms-3"></i>
+                        <p class="mb-0"><strong>صحة التربة:</strong> يحسن بنية التربة والتنوع البيولوجي.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h4 class="text-center fw-bold mb-4">كيف نصنعه؟</h4>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="compost-step shadow-sm">
+                        <i class="fas fa-recycle fa-2x text-success mb-3"></i>
+                        <h5>الجمع</h5>
+                        <p class="small text-muted">نجمع البقايا العضوية التي لم تعد صالحة للاستهلاك البشري.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="compost-step shadow-sm">
+                        <i class="fas fa-vial fa-2x text-success mb-3"></i>
+                        <h5>التوازن</h5>
+                        <p class="small text-muted">خلط "الخضراوات" (النيتروجين) و"البنيات" (الكربون) للنسبة المثالية.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="compost-step shadow-sm">
+                        <i class="fas fa-seedling fa-2x text-success mb-3"></i>
+                        <h5>النضج</h5>
+                        <p class="small text-muted">عملية طبيعية من التحلل حتى تصبح تربة غنية وداكنة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Environmental Impact -->
+    <section id="impact" class="section-padding bg-gradient-green shadow-lg">
+        <div class="container text-center text-white">
+            <h2 class="fw-bold mb-5 text-white">تأثيرنا في أرقام</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <i class="fas fa-tint impact-icon text-white"></i>
+                    <h3 class="fw-bold">2.5 مليون لتر</h3>
+                    <p>من المياه تم توفيرها بتقليل هدر الطعام</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-cloud impact-icon text-white"></i>
+                    <h3 class="fw-bold">15 طن CO2</h3>
+                    <p>من انبعاثات الكربون تم منعها</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-users impact-icon text-white"></i>
+                    <h3 class="fw-bold">1,200 عائلة</h3>
+                    <p>استفادت من أسعارنا المخفضة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Shop Preview -->
+    <section id="shop" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">أحدث العروض</h2>
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400" class="w-100" height="220" style="object-fit:cover" alt="صندوق خضروات">
+                        <div class="p-4">
+                            <h5>صندوق خضروات مشكل (5 كجم)</h5>
+                            <p class="small text-muted">يحتوي على بطاطس، جزر، وطماطم ذات "أشكال مميزة".</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="fw-bold text-success">5.00$ <del class="text-muted small">10.00$</del></span>
+                                <button class="btn btn-success btn-sm rounded-pill">أضف للسلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card-custom">
+                        <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400" class="w-100" height="220" style="object-fit:cover" alt="حقيبة فواكه">
+                        <div class="p-4">
+                            <h5>حقيبة فواكه موسمية (3 كجم)</h5>
+                            <p class="small text-muted">تفاح وبرتقال حلو وناضج، ببعض الكدمات البسيطة.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="fw-bold text-success">4.50$ <del class="text-muted small">9.00$</del></span>
+                                <button class="btn btn-success btn-sm rounded-pill">أضف للسلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card-custom border border-success border-2">
+                        <div class="position-absolute bg-success text-white px-3 py-1 rounded-start mt-3" style="right:0">جديد</div>
+                        <img src="https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?w=400" class="w-100" height="220" style="object-fit:cover" alt="كيس سماد">
+                        <div class="p-4">
+                            <h5>سماد حيوي ممتاز (10 لتر)</h5>
+                            <p class="small text-muted">سماد عضوي طبيعي 100% مصنوع من نفاياتنا المنقذة.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="fw-bold text-success">3.00$ <span class="badge bg-light text-success small">خيار بيئي</span></span>
+                                <button class="btn btn-dark btn-sm rounded-pill">أضف للسلة</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Partnerships -->
+    <section id="partners" class="section-padding bg-light">
+        <div class="container text-center">
+            <h2 class="section-title">شركاؤنا في الخير</h2>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="card-custom p-4 text-start border-end border-success border-4">
+                        <h4 class="fw-bold"><i class="fas fa-hand-holding-heart text-success me-2"></i> دعم دور الأيتام</h4>
+                        <p>نقدم صناديق طعام مجانية أسبوعياً لـ 15 دار أيتام. نؤمن بأن الغذاء الصحي حق لكل طفل.</p>
+                        <button class="btn btn-outline-success btn-sm rounded-pill">قائمة الشركاء</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card-custom p-4 text-start border-end border-warning border-4">
+                        <h4 class="fw-bold"><i class="fas fa-tractor text-warning me-2"></i> دعم المزارعين</h4>
+                        <p>ندعم أكثر من 200 مزارع صغير من خلال شراء فائض محاصيلهم نقداً وبأسعار عادلة.</p>
+                        <button class="btn btn-outline-warning btn-sm rounded-pill text-dark">انضم كمزارع</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Footer Section -->
+    <footer class="main-footer">
+        <div class="container footer-links">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand mb-3">
+                        <i class="fas fa-leaf"></i> فرصة ثانية
+                    </div>
+                    <p class="small">نؤمن بأن كل ثمرة تستحق فرصة ثانية لتطعم عائلة. انضم إلينا في الحد من هدر الطعام وحماية بيئتنا.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2 me-lg-auto">
+                    <h6>روابط سريعة</h6>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#impact">تأثيرنا</a></li>
+                        <li><a href="#shop">المتجر</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6>الدعم</h6>
+                    <ul>
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#">سياسة الشحن</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6>اتصل بنا</h6>
+                    <ul class="small">
+                        <li><i class="fas fa-map-marker-alt ms-2 text-success"></i> 123 شارع الأخضر، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone ms-2 text-success"></i> +20 123 456 7890</li>
+                        <li><i class="fas fa-envelope ms-2 text-success"></i> hello@secondchance.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <p class="mb-0">© 2025 <span class="text-success">فرصة ثانية</span>. جميع الحقوق محفوظة. صُمم من أجل كوكب أفضل.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+         const chatToggle = document.getElementById("chatToggle");
+  const chatbot = document.getElementById("chatbot");
+  const closeChat = document.getElementById("closeChat");
+  const chatBody = document.getElementById("chatBody");
+  const userInput = document.getElementById("userInput");
+
+  chatToggle.onclick = () => chatbot.classList.toggle("open");
+  closeChat.onclick = () => chatbot.classList.remove("open");
+
+const answers = {
+  // ───── ترحيب حقيقي ─────
+  "السلام عليكم": "وعليكم السلام ورحمة الله 🌿 تحب أساعدك في إيه؟",
+  "مساء الخير": "مساء النور 😊 تحت أمرك",
+  "صباح الخير": "صباح الفل 🌞",
+  "حد موجود": "أيوه موجودين 👍 اتفضل",
+  "في حد يرد": "أيوه معاك FreshBot 😊",
+
+  // ───── أسئلة عن البيع ─────
+  "انتوا بتبيعوا ايه بالظبط": "بنبيع فاكهة وخضار طازة، وكمان بنستلم فائض لإعادة البيع.",
+  "عندكم فاكهة طازة": "أيوه كل الفاكهة طازة ومختارة بعناية 🍎🍌",
+  "الخضار عندكم طازة": "أيوه خضارنا طازة ويومي 🥬🍅",
+  "ايه المتوفر النهارده": "المتاح بيختلف يوم بيوم، قولي عايز إيه وأنا أأكدلك.",
+  "المنتجات بتاعتكم منين": "منتجاتنا جاية مباشرة من المزارع 👨‍🌾",
+
+  // ───── أسئلة الأسعار ─────
+  "الاسعار كام": "الأسعار بتختلف حسب المنتج والكمية، قولي محتاج إيه؟",
+  "سعر الكيلو كام": "حدد الصنف وأنا أقولك السعر الحالي.",
+  "في خصم على الكميات": "أيوه، الكميات الكبيرة ليها سعر خاص 💰",
+  "بتبيعوا جمله": "أيوه بنبيع جملة بأسعار للتجار.",
+  "ينفع قطاعي": "طبعًا، بنبيع قطاعي كمان.",
+
+  // ───── أسئلة الطلب ─────
+  "ازاي اطلب من عندكم": "ابعتلنا اسم المنتج، الكمية، ومكان التوصيل.",
+  "ممكن اطلب دلوقتي": "أيوه طبعًا 👍 قولي طلبك",
+  "في حد ادنى للطلب": "لا للقطاعي، الجملة حسب الاتفاق.",
+  "ممكن احجز كميه": "أيوه ممكن تحجز قبل الاستلام.",
+
+  // ───── أسئلة التوصيل (بجد 👇) ─────
+  "بتوصلوا لحد البيت": "أيوه بنوصل لحد باب البيت 🛵",
+  "التوصيل متاح": "أيوه التوصيل متاح داخل المحافظة.",
+  "التوصيل بيبقى امتى": "غالبًا في نفس اليوم.",
+  "بياخد وقت قد ايه": "من ساعتين لـ 24 ساعة حسب الضغط.",
+  "التوصيل بكام": "سعر التوصيل بيختلف حسب العنوان.",
+  "بتوصلوا فين": "بنغطي معظم مناطق المحافظة.",
+  "ينفع استلام منكم": "أيوه ممكن الاستلام من المكان.",
+
+  // ───── أسئلة إعادة البيع ─────
+  "عندي فاكهة زيادة اعمل ايه": "تواصل معانا ونستلمها منك.",
+  "بتستلموا فائض": "أيوه بنستلم الفائض الصالح للبيع.",
+  "بتتعاملوا مع مزارعين": "أيوه بنرحب بالتعامل مع المزارعين 🤝",
+  "عندي خضار كتير": "قولي الكمية والنوع ونظبط الاستلام.",
+  "بتشتروا من تجار": "أيوه حسب الجودة والكمية.",
+
+  // ───── الدفع ─────
+  "الدفع ازاي": "الدفع كاش عند الاستلام 💵",
+  "فيزا ولا كاش": "حاليًا الدفع كاش فقط.",
+  "بدفع امتى": "عند الاستلام مباشرة.",
+
+  // ───── أوقات العمل ─────
+  "شغالين امتى": "شغالين يوميًا من 9 صباحًا لـ 9 مساءً.",
+  "حد بيرد دلوقتي": "أيوه معاك 😊",
+  "اجازة امتى": "مفيش، شغالين طول الأسبوع.",
+
+  // ───── ختام ─────
+  "تمام شكرا": "العفو 🌱 أي خدمة",
+  "تسلم": "تحت أمرك 😊",
+  "مع السلامه": "في أمان الله 🌿",
+  "هكلمكم بعدين": "مستنيينك في أي وقت 👌"
+};
+
+  function sendMessage(){
+    const text = userInput.value.trim();
+    if(!text) return;
+
+    const userMsg = document.createElement("div");
+    userMsg.className = "user-msg";
+    userMsg.innerText = text;
+    chatBody.appendChild(userMsg);
+
+    let reply = "مش فاهم سؤالك 🤔 ممكن توضحه أكتر؟";
+    for(let key in answers){
+      if(text.includes(key)){
+        reply = answers[key];
+      }
+    }
+
+    const botMsg = document.createElement("div");
+    botMsg.className = "bot-msg";
+    botMsg.innerText = reply;
+
+    setTimeout(()=>{
+      chatBody.appendChild(botMsg);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    },300);
+
+    userInput.value = "";
+  }
+         // لو الشاشة صغيرة خلي الحركة أبطأ
+  const track = document.querySelector('.marquee-track');
+  if (window.innerWidth < 768 && track) {
+    track.style.animationDuration = '30s';
+  }
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if(href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if(target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

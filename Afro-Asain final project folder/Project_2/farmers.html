@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرصة ثانية | بوابة المزارعين</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="./assets/css/style.css">
+   
+</head>
+
+<body>
+
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="./index.html">
+                <i class="fas fa-leaf ms-2"></i> فرصة ثانية
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto" style="margin-left: 140px;">
+                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#compost">دليل السماد</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./learn.html">تعلم عن الهدر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#shop">المتجر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">شركاؤنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="./farmers.html" class="btn btn-success rounded-pill px-4 me-lg-3">للمزارعين</a>
+                    <a href="./game.html" class="btn btn-outline-success rounded-pill px-4 me-lg-2">لنلعب!</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- Hero -->
+<header class="farmer-hero">
+    <div class="container">
+        <h1 class="display-4 fw-bold">بوابة دعم المزارعين</h1>
+        <p class="lead">حلول مستدامة لأرضك تعتمد على الاقتصاد الدائري</p>
+    </div>
+</header>
+
+<div class="container my-5">
+    <div class="col-lg-9 mx-auto">
+
+        <!-- Tabs -->
+        <ul class="nav nav-pills nav-fill mb-5">
+            <li class="nav-item">
+                <button class="nav-link active rounded-pill py-3" data-bs-toggle="pill" data-bs-target="#sell">
+                    <i class="fas fa-box-open me-2"></i> بيع الفائض
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link rounded-pill py-3" data-bs-toggle="pill" data-bs-target="#buy">
+                    <i class="fas fa-seedling me-2"></i> طلب سماد
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- Sell -->
+            <div class="tab-pane fade show active" id="sell">
+                <div class="card-custom">
+                    <h3 class="fw-bold text-success mb-4">نموذج تسليم المحاصيل</h3>
+
+                    <form>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label">الاسم / اسم المزرعة</label>
+                                <input type="text" class="form-control" placeholder="اكتب اسمك">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">رقم الهاتف</label>
+                                <input type="tel" class="form-control" placeholder="01xxxxxxxxx">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">نوع المحصول</label>
+                                <select class="form-select">
+                                    <option>خضروات</option>
+                                    <option>فاكهة</option>
+                                    <option>حبوب</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">الكمية المتوقعة (كجم)</label>
+                                <input type="number" class="form-control" placeholder="مثال: 500">
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">وصف الحالة</label>
+                                <textarea class="form-control" rows="4" placeholder="اشرح حالة المحصول"></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-success btn-lg w-100 rounded-pill">
+                                    إرسال للمراجعة
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Buy -->
+            <div class="tab-pane fade" id="buy">
+                <div class="card-custom">
+                    <h3 class="fw-bold mb-3">طلب سماد معاد تدويره</h3>
+                    <p class="text-muted">سماد عضوي عالي الجودة بسعر مخصص للمزارعين</p>
+
+                    <form>
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <label class="form-label">نوع المنتج</label>
+                                <select class="form-select">
+                                    <option>سماد خضروات - 25 جنيه</option>
+                                    <option>مغذي سائل - 35 جنيه</option>
+                                    <option>بيتموس مخصب - 55 جنيه</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">الكمية</label>
+                                <input type="number" class="form-control" value="10">
+                                <small class="text-muted">الحد الأدنى 10 وحدات</small>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">موقع المزرعة</label>
+                                <input type="text" class="form-control" placeholder="المحافظة / المدينة">
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-dark btn-lg w-100 rounded-pill">
+                                    تأكيد الطلب
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modern Footer Section-->
+<footer class="main-footer">
+  <div class="container footer-links">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-3">
+          <i class="fas fa-leaf"></i> فرصة ثانية
+        </div>
+        <p class="small">نؤمن بأن كل ثمرة تستحق فرصة ثانية لتطعم عائلة. انضم إلينا في الحد من هدر الطعام وحماية بيئتنا.</p>
+        <div class="social-icons mt-4">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2 me-lg-auto">
+        <h6>روابط سريعة</h6>
+        <ul>
+          <li><a href="./index.html#home">الرئيسية</a></li>
+          <li><a href="./index.html#about">من نحن</a></li>
+          <li><a href="./index.html#impact">تأثيرنا</a></li>
+          <li><a href="./index.html#shop">المتجر</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>الدعم</h6>
+        <ul>
+          <li><a href="#">مركز المساعدة</a></li>
+          <li><a href="#">سياسة الشحن</a></li>
+          <li><a href="#">سياسة الاسترجاع</a></li>
+          <li><a href="./contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h6>اتصل بنا</h6>
+        <ul class="small">
+          <li><i class="fas fa-map-marker-alt ms-2 text-success"></i> 123 شارع الأخضر، القاهرة، مصر</li>
+          <li><i class="fas fa-phone ms-2 text-success"></i> +20 123 456 7890</li>
+          <li><i class="fas fa-envelope ms-2 text-success"></i> hello@secondchance.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom text-center">
+    <div class="container">
+      <p class="mb-0">© 2025 <span class="text-success">فرصة ثانية</span>. جميع الحقوق محفوظة. صُمم من أجل كوكب أفضل.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

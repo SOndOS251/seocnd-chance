@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فرصة ثانية | تعلّم عن هدر الطعام</title>
+
+  <!-- Bootstrap RTL -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Your ONE CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="./index.html">
+                <i class="fas fa-leaf ms-2"></i> فرصة ثانية
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto" style="margin-right: 140px;">
+                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#compost">دليل السماد</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./learn.html">تعلم عن الهدر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#shop">المتجر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">شركاؤنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="./farmers.html" class="btn btn-success rounded-pill px-4 me-lg-3">للمزارعين</a>
+                    <a href="./game.html" class="btn btn-outline-success rounded-pill px-4 me-lg-2">لنلعب!</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- ===================== HERO (Wave) ===================== -->
+<header class="learn-hero">
+  <div class="container hero-inner">
+    <h1>تعلّم عن هدر الطعام 🍅</h1>
+    <p>إحصائيات سريعة + ليه “الخضار والفاكهة” أكتر حاجة بتتهدر… وإزاي تحويلها لسماد يقفل الدايرة 🌱</p>
+
+    <div class="d-flex justify-content-center gap-2 flex-wrap mt-4">
+      <a href="#highlights" class="btn btn-light rounded-pill px-4 fw-bold">
+        <i class="fa-solid fa-chart-column ms-2"></i> شوف الأرقام
+      </a>
+      <a href="./shop.html" class="btn btn-outline-light rounded-pill px-4 fw-bold">
+        <i class="fa-solid fa-cart-shopping ms-2"></i> روح للمتجر
+      </a>
+    </div>
+  </div>
+
+  <!-- Wave SVG -->
+  <svg class="wave" viewBox="0 0 1440 140" preserveAspectRatio="none">
+    <path fill="#f9fbf9" d="M0,80 C240,120 480,40 720,60 C960,80 1200,140 1440,90 L1440,140 L0,140 Z"></path>
+  </svg>
+</header>
+
+<!-- ===================== DID YOU KNOW ===================== -->
+<section id="didyouknow" class="didyouknow">
+  <div class="container">
+    <div class="card-soft p-4 p-md-5 text-center">
+      <div class="big-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <h2 class="fw-bold mb-2">هل تعلم؟</h2>
+      <p class="text-muted mb-4">
+        جزء كبير من الفواكه والخضروات بيتترمي لأسباب “شكلية” (حجم/انحناءة/خدش بسيط)، رغم إنها صالحة للأكل.
+      </p>
+
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-4">
+          <div class="card-soft p-4 h-100">
+            <div class="icon-bubble mb-2 mx-auto"><i class="fa-solid fa-apple-whole"></i></div>
+            <div class="stat-num" data-count="33" data-suffix="%"></div>
+            <p class="stat-label mt-2">تقديرات لهدر الغذاء عالميًا (حوالي ثلث الإنتاج)</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-soft p-4 h-100">
+            <div class="icon-bubble mb-2 mx-auto"><i class="fa-solid fa-cloud"></i></div>
+            <div class="stat-num" data-count="8" data-suffix="–10%"></div>
+            <p class="stat-label mt-2">نسبة تقريبية من الانبعاثات مرتبطة بفقد/هدر الغذاء</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-soft p-4 h-100">
+            <div class="icon-bubble mb-2 mx-auto"><i class="fa-solid fa-seedling"></i></div>
+            <div class="stat-num" data-count="100" data-suffix="%"></div>
+            <p class="stat-label mt-2">الهدر “غير الصالح للأكل” ممكن يتحوّل لسماد ويخدم المزارعين</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#compost-benefits" class="btn btn-success rounded-pill px-4 mt-4">
+        اكتشف فوائد السماد <i class="fa-solid fa-arrow-left ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FUNDAMENTALS ===================== -->
+<section id="fundamentals" class="section-padding">
+  <div class="container">
+    <h2 class="section-title">أساسيات هدر الطعام</h2>
+    <p class="section-subtitle">
+      ليه الخضار والفاكهة بالتحديد؟ لأنها سريعة التلف، وبتتأثر بالنقل والتخزين والمعايير الجمالية.
+    </p>
+
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card-soft card-soft-hover p-4 h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="icon-bubble"><i class="fa-solid fa-globe"></i></div>
+            <h4 class="fw-bold mb-0">حقائق عالمية</h4>
+          </div>
+          <ul class="text-muted mb-0">
+            <li class="mb-2">الهدر يحصل في المزرعة، النقل، التخزين، المتاجر، والبيوت.</li>
+            <li class="mb-2">كل مرحلة لها حلول: تبريد، فرز، توعية، وتحويل عضوي.</li>
+            <li>أثر الهدر مش أكل بس… ده مياه + طاقة + انبعاثات.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card-soft card-soft-hover p-4 h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="icon-bubble"><i class="fa-solid fa-truck"></i></div>
+            <h4 class="fw-bold mb-0">ليه خضار/فاكهة؟</h4>
+          </div>
+          <ul class="text-muted mb-0">
+            <li class="mb-2">حسّاسة: حرارة + رطوبة = تلف أسرع.</li>
+            <li class="mb-2">المعايير الشكلية بتزوّد الرفض (مش مطابق للصورة).</li>
+            <li>الخدش/حجم صغير ≠ غير صالح للأكل.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card-soft card-soft-hover p-4 h-100">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="icon-bubble"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <h4 class="fw-bold mb-0">الفرصة الثانية</h4>
+          </div>
+          <ul class="text-muted mb-0">
+            <li class="mb-2">الصالحة للأكل: تتباع بسعر عادل بدل ما تترمي.</li>
+            <li class="mb-2">غير الصالحة للأكل: تتحوّل لسماد عضوي “ذهب أسود”.</li>
+            <li>كده بنقفل دايرة الاقتصاد الدائري.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HIGHLIGHTS ===================== -->
+<section id="highlights" class="section-padding">
+  <div class="container">
+    <h2 class="section-title">احصائيات </h2>
+
+    <div class="highlight">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card-soft p-4 h-100 text-center">
+            <div class="icon-bubble mx-auto mb-2"><i class="fa-solid fa-trash"></i></div>
+            <div class="stat-num" data-count="1000" data-suffix="M+"></div>
+            <p class="stat-label mt-2">أكثر من “مليار طن” هدر غذاء سنويًا (تقديرات عالمية حديثة)</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card-soft p-4 h-100 text-center">
+            <div class="icon-bubble mx-auto mb-2"><i class="fa-solid fa-droplet"></i></div>
+            <div class="stat-num" data-count="70" data-suffix="%"></div>
+            <p class="stat-label mt-2">الزراعة بتستهلك نسبة كبيرة من المياه العذبة… فهدر المحاصيل = هدر مياه</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card-soft p-4 h-100 text-center">
+            <div class="icon-bubble mx-auto mb-2"><i class="fa-solid fa-leaf"></i></div>
+            <div class="stat-num" data-count="1" data-suffix=" حل"></div>
+            <p class="stat-label mt-2">بيع الفائض + تحويل غير الصالح لسماد = تقليل هدر + دعم مزارعين</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-3">
+        <small class="text-muted">
+          * الأرقام هنا “تقديرية/تعليمية” ومناسبة للمسابقة، ولو عايزاها بمصادر رسمية قولي أظبطها لك بمراجع.
+        </small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMPOST BENEFITS ===================== -->
+<section id="compost-benefits" class="section-padding">
+  <div class="container">
+    <h2 class="section-title">فايدة تحويل الهدر لسماد عضوي</h2>
+    <p class="section-subtitle">
+      بدل ما الهدر يروح للقمامة ويعمل روائح/غازات… نحوله لمنتج مفيد للتربة والمزارعين.
+    </p>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft card-soft-hover tip-card">
+          <div class="icon-bubble mb-3"><i class="fa-solid fa-mountain-sun"></i></div>
+          <h5>تربة أقوى</h5>
+          <p>يحسن بنية التربة ويزود خصوبتها بطريقة طبيعية.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft card-soft-hover tip-card">
+          <div class="icon-bubble mb-3"><i class="fa-solid fa-droplet"></i></div>
+          <h5>احتفاظ بالمياه</h5>
+          <p>السماد يساعد التربة تمسك رطوبة أكتر… ري أقل.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft card-soft-hover tip-card">
+          <div class="icon-bubble mb-3"><i class="fa-solid fa-bug-slash"></i></div>
+          <h5>صحة نباتات</h5>
+          <p>يدعم الكائنات المفيدة في التربة ويقلل أمراض.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="card-soft card-soft-hover tip-card">
+          <div class="icon-bubble mb-3"><i class="fa-solid fa-recycle"></i></div>
+          <h5>اقتصاد دائري</h5>
+          <p>نقفل الدايرة: فائض → بيع/تبرع → سماد → مزارع.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="./farmers.html" class="btn btn-success rounded-pill px-4">
+        <i class="fa-solid fa-tractor ms-2"></i> جرّب بوابة المزارعين
+      </a>
+      <a href="./shop.html" class="btn btn-outline-success rounded-pill px-4 me-2">
+        <i class="fa-solid fa-store ms-2"></i> شوف منتجات الإنقاذ
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+   <footer class="main-footer">
+        <div class="container footer-links">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand mb-3">
+                        <i class="fas fa-leaf"></i> فرصة ثانية
+                    </div>
+                    <p class="small">نؤمن بأن كل ثمرة تستحق فرصة ثانية لتطعم عائلة. انضم إلينا في الحد من هدر الطعام وحماية بيئتنا.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2 me-lg-auto">
+                    <h6>روابط سريعة</h6>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#impact">تأثيرنا</a></li>
+                        <li><a href="#shop">المتجر</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6>الدعم</h6>
+                    <ul>
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#">سياسة الشحن</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6>اتصل بنا</h6>
+                    <ul class="small">
+                        <li><i class="fas fa-map-marker-alt ms-2 text-success"></i> 123 شارع الأخضر، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone ms-2 text-success"></i> +20 123 456 7890</li>
+                        <li><i class="fas fa-envelope ms-2 text-success"></i> hello@secondchance.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <p class="mb-0">© 2025 <span class="text-success">فرصة ثانية</span>. جميع الحقوق محفوظة. صُمم من أجل كوكب أفضل.</p>
+            </div>
+        </div>
+    </footer>
+
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your ONE JS -->
+<script>
+    /* =========================================================
+   Second Chance - Global JS
+   File: assets/js/main.js
+   ========================================================= */
+
+(function () {
+  "use strict";
+
+  /* ========== 1) Smooth Scroll for internal anchors ========== */
+  document.querySelectorAll('a.nav-link, a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
+
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      e.preventDefault();
+      const navH = document.querySelector(".navbar")?.offsetHeight || 70;
+
+      window.scrollTo({
+        top: target.offsetTop - navH,
+        behavior: "smooth",
+      });
+    });
+  });
+
+  /* ========== 2) Active link on scroll (for this page sections) ========== */
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".navbar .nav-link");
+
+  function setActiveNav() {
+    const scrollY = window.scrollY + (document.querySelector(".navbar")?.offsetHeight || 70) + 10;
+
+    sections.forEach((sec) => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      const id = sec.getAttribute("id");
+
+      if (scrollY >= top && scrollY < top + height) {
+        navLinks.forEach((l) => l.classList.remove("active"));
+        const link = document.querySelector(`.navbar .nav-link[href="#${id}"]`);
+        if (link) link.classList.add("active");
+      }
+    });
+  }
+  window.addEventEventListener ? window.addEventListener("scroll", setActiveNav) : null;
+
+  /* ========== 3) Animated counters (data-count) ========== */
+  const counters = document.querySelectorAll("[data-count]");
+  if (counters.length) {
+    const runCounter = (el) => {
+      const end = Number(el.dataset.count || 0);
+      const suffix = el.dataset.suffix || "";
+      const duration = Number(el.dataset.duration || 1200);
+      const start = 0;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const value = Math.round(start + (end - start) * progress);
+        el.textContent = value.toLocaleString("en-US") + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            runCounter(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    counters.forEach((c) => io.observe(c));
+  }
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فرصة ثانية | متجر التخفيضات</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="./assets/css/style.css">
+ 
+</head>
+
+<body>
+
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="./index.html">
+                <i class="fas fa-leaf ms-2"></i> فرصة ثانية
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto" style="margin-left: 140px;">
+                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#compost">دليل السماد</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./learn.html">تعلم عن الهدر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#shop">المتجر</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">شركاؤنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="./farmers.html" class="btn btn-success rounded-pill px-4 me-lg-3">للمزارعين</a>
+                    <a href="./game.html" class="btn btn-outline-success rounded-pill px-4 me-lg-2">لنلعب!</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- Header -->
+<div class="container my-5" id="shop">
+  <div class="text-center mb-4">
+    <h2 class="display-5 fw-bold text-success">سوق التخفيضات</h2>
+    <p class="text-muted mb-2">منتجات “مش هتدخل السوبر ماركت” — بس لسه طازة ومناسبة للأكل 👌</p>
+    <p class="small text-muted">الغير مناسب للأكل بيتحوّل لسماد عضوي ونبيعه للمزارعين تاني 🌱</p>
+  </div>
+
+  <div class="row g-4">
+    <!-- Main content -->
+    <div class="col-lg-8">
+
+      <!-- Vegetables -->
+      <h3 class="category-header">خضروات الأوتليت</h3>
+      <div class="row g-4">
+
+        <!-- Tomatoes -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card-custom h-100"
+               data-id="veg-tomato"
+               data-name="طماطم عضوية"
+               data-price="9"
+               data-weight="1.0"
+               data-water="60"
+               data-co2="1.8">
+            <span class="badge-discount">خصم 40%</span>
+            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=500" class="product-img" alt="tomato">
+            <div class="p-3">
+              <h5>طماطم عضوية</h5>
+              <p class="small text-muted">مثالية للطهي والصلصات</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="price-new">9 جنيه</span>
+                  <span class="price-old">15 جنيه</span>
+                </div>
+                <button class="btn btn-sm btn-success rounded-circle add-btn" aria-label="add">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="mt-2 small text-muted">
+                ✅ إنقاذ: <b>1 كجم</b> • 💧 <b>60 لتر</b> • 🌍 <b>1.8 كجم CO₂</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Potatoes -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card-custom h-100"
+               data-id="veg-potato"
+               data-name="بطاطس بلدي"
+               data-price="6"
+               data-weight="1.5"
+               data-water="30"
+               data-co2="1.2">
+            <span class="badge-discount">خصم 50%</span>
+            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=500" class="product-img" alt="potato">
+            <div class="p-3">
+              <h5>بطاطس بلدي</h5>
+              <p class="small text-muted">أحجام غير منتظمة بطعم أصيل</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="price-new">6 جنيه</span>
+                  <span class="price-old">12 جنيه</span>
+                </div>
+                <button class="btn btn-sm btn-success rounded-circle add-btn" aria-label="add">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="mt-2 small text-muted">
+                ✅ إنقاذ: <b>1.5 كجم</b> • 💧 <b>30 لتر</b> • 🌍 <b>1.2 كجم CO₂</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carrots -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card-custom h-100"
+               data-id="veg-carrot"
+               data-name="جزر حلو"
+               data-price="8"
+               data-weight="1.0"
+               data-water="25"
+               data-co2="0.9">
+            <span class="badge-discount">خصم 25%</span>
+            <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500" class="product-img" alt="carrot">
+            <div class="p-3">
+              <h5>جزر حلو</h5>
+              <p class="small text-muted">أطراف مكسورة لكنه طازج</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="price-new">8 جنيه</span>
+                  <span class="price-old">11 جنيه</span>
+                </div>
+                <button class="btn btn-sm btn-success rounded-circle add-btn" aria-label="add">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="mt-2 small text-muted">
+                ✅ إنقاذ: <b>1 كجم</b> • 💧 <b>25 لتر</b> • 🌍 <b>0.9 كجم CO₂</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pepper -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card-custom h-100"
+               data-id="veg-pepper"
+               data-name="فلفل ألوان"
+               data-price="15"
+               data-weight="0.8"
+               data-water="35"
+               data-co2="1.1">
+            <span class="badge-discount">خصم 30%</span>
+            <img src="./assets/images/ChatGPT Image Feb 9, 2026, 04_52_28 PM.png" class="product-img" alt="pepper">
+            <div class="p-3">
+              <h5>فلفل ألوان</h5>
+              <p class="small text-muted">حجم صغير غني بالفيتامينات</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="price-new">15 جنيه</span>
+                  <span class="price-old">22 جنيه</span>
+                </div>
+                <button class="btn btn-sm btn-success rounded-circle add-btn" aria-label="add">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="mt-2 small text-muted">
+                ✅ إنقاذ: <b>0.8 كجم</b> • 💧 <b>35 لتر</b> • 🌍 <b>1.1 كجم CO₂</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Fruits -->
+      <h3 class="category-header">فاكهة الفرصة الثانية</h3>
+      <div class="row g-4">
+
+        <!-- Orange -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card-custom h-100"
+               data-id="fruit-orange"
+               data-name="برتقال عصير"
+               data-price="9"
+               data-weight="1.2"
+               data-water="40"
+               data-co2="1.3">
+            <span class="badge-discount">خصم 35%</span>
+            <img src="./assets/images/ChatGPT Image Feb 9, 2026, 04_52_36 PM.png" class="product-img" alt="orange">
+            <div class="p-3">
+              <h5>برتقال عصير</h5>
+              <p class="small text-muted">مثالي للعصائر</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="price-new">9 جنيه</span>
+                  <span class="price-old">14 جنيه</span>
+                </div>
+                <button class="btn btn-sm btn-success rounded-circle add-btn" aria-label="add">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="mt-2 small text-muted">
+                ✅ إنقاذ: <b>1.2 كجم</b> • 💧 <b>40 لتر</b> • 🌍 <b>1.3 كجم CO₂</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banana -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card-custom h-100"
+               data-id="fruit-banana"
+               data-name="موز ناضج"
+               data-price="11"
+               data-weight="1.0"
+               data-water="50"
+               data-co2="1.4">
+            <span class="badge-discount">خصم 45%</span>
+            <img src="./assets/images/ChatGPT Image Feb 9, 2026, 04_52_42 PM.png" class="product-img" alt="banana">
+            <div class="p-3">
+              <h5>موز ناضج</h5>
+              <p class="small text-muted">حلو جدًا ومناسب للحلويات</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="price-new">11 جنيه</span>
+                  <span class="price-old">20 جنيه</span>
+                </div>
+                <button class="btn btn-sm btn-success rounded-circle add-btn" aria-label="add">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="mt-2 small text-muted">
+                ✅ إنقاذ: <b>1 كجم</b> • 💧 <b>50 لتر</b> • 🌍 <b>1.4 كجم CO₂</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Compost Section -->
+      <div class="bg-success bg-opacity-10 p-5 rounded-4 mt-5 border border-success border-opacity-25" id="compost">
+        <h3 class="category-header">الأسمدة العضوية (السماد)</h3>
+
+        <p class="text-muted small mb-4">
+          أي خضار/فاكهة غير مناسب للأكل بنحوّله لسماد عضوي ونرجعه للمزارعين — كده بنقفل الدايرة 🌿
+        </p>
+
+        <div class="row g-4">
+          <!-- Compost 1 -->
+          <div class="col-md-4">
+            <div class="card-custom p-0 border border-success h-100"
+                 data-id="comp-veg-5l"
+                 data-name="سماد خضروات (5 لتر)"
+                 data-price="25"
+                 data-weight="0"
+                 data-water="0"
+                 data-co2="0">
+              <img src="./assets/images/ChatGPT Image Feb 9, 2026, 04_52_45 PM.png" class="product-img" alt="Compost">
+              <div class="p-3">
+                <span class="compost-badge">عضوي 100%</span>
+                <h5 class="mt-2">سماد خضروات (5 لتر)</h5>
+                <p class="small text-muted">غني بالعناصر الغذائية للنباتات المنزلية</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="price-new">25 جنيه</span>
+                  <button class="btn btn-dark btn-sm rounded-pill px-3 add-btn">أضف للسلة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compost 2 -->
+          <div class="col-md-4">
+            <div class="card-custom p-0 border border-success h-100"
+                 data-id="comp-liquid-1l"
+                 data-name="مغذّي نباتات سائل (1 لتر)"
+                 data-price="35"
+                 data-weight="0"
+                 data-water="0"
+                 data-co2="0">
+              <img src="./assets/images/ChatGPT Image Feb 9, 2026, 04_52_49 PM.png" class="product-img" alt="Liquid Fertilizer">
+              <div class="p-3">
+                <span class="compost-badge">مركّز</span>
+                <h5 class="mt-2">مغذّي نباتات سائل (1 لتر)</h5>
+                <p class="small text-muted">لنمو أسرع وأوراق أكثر خضرة</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="price-new">35 جنيه</span>
+                  <button class="btn btn-dark btn-sm rounded-pill px-3 add-btn">أضف للسلة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compost 3 -->
+          <div class="col-md-4">
+            <div class="card-custom p-0 border border-success h-100"
+                 data-id="comp-soil-10l"
+                 data-name="تربة مخصبة (10 لتر)"
+                 data-price="55"
+                 data-weight="0"
+                 data-water="0"
+                 data-co2="0">
+              <img src="./assets/images/ChatGPT Image Feb 9, 2026, 04_53_07 PM.png" class="product-img" alt="Soil Mix">
+              <div class="p-3">
+                <span class="compost-badge">جاهز للزراعة</span>
+                <h5 class="mt-2">تربة مخصبة (10 لتر)</h5>
+                <p class="small text-muted">خليط تربة متكامل للزراعة المنزلية</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="price-new">55 جنيه</span>
+                  <button class="btn btn-dark btn-sm rounded-pill px-3 add-btn">أضف للسلة</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Impact / Cart / Coupon Panel -->
+    <div class="col-lg-4">
+      <div class="impact-panel">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <h5 class="mb-0 text-success"><i class="fa-solid fa-seedling ms-2"></i> تأثير مشترياتك</h5>
+          <span class="badge text-bg-success bg-opacity-75" id="levelBadge">منقذ مبتدئ</span>
+        </div>
+
+        <div class="vstack gap-2 mb-3">
+          <div class="impact-metric">
+            <span>✅ كجم منقذ</span>
+            <b id="impactKg">0</b>
+          </div>
+          <div class="impact-metric">
+            <span>💧 لتر ماء موفّر (تقديري)</span>
+            <b id="impactWater">0</b>
+          </div>
+          <div class="impact-metric">
+            <span>🌍 كجم CO₂ متجنب (تقديري)</span>
+            <b id="impactCO2">0</b>
+          </div>
+        </div>
+
+        <hr>
+
+        <h6 class="mb-2">السلة</h6>
+        <div id="cartItems" class="small text-muted">لسه مفيش منتجات في السلة.</div>
+
+        <div class="mt-3">
+          <div class="d-flex justify-content-between">
+            <span class="text-muted">الإجمالي</span>
+            <b><span id="cartTotal">0</span> جنيه</b>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span class="text-muted">خصم</span>
+            <b class="text-success">- <span id="cartDiscount">0</span> جنيه</b>
+          </div>
+          <div class="d-flex justify-content-between mt-2">
+            <span class="fw-bold">المطلوب</span>
+            <b class="fw-bold"><span id="cartFinal">0</span> جنيه</b>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <label class="form-label small">كوبون الخصم (من اللعبة)</label>
+          <div class="input-group">
+            <input id="couponInput" class="form-control" placeholder="مثال: GAME10" />
+            <button id="applyCouponBtn" class="btn btn-success">تطبيق</button>
+          </div>
+          <div class="form-text" id="couponHint"></div>
+        </div>
+
+        <div class="mt-3 d-grid">
+          <button class="btn btn-dark rounded-pill" id="checkoutBtn">
+            إتمام الشراء (تجريبي)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Cart Button (Optional quick access) -->
+<button class="btn btn-success cart-fab" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" aria-controls="cartCanvas">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span class="cart-count" id="cartCount">0</span>
+</button>
+
+<!-- Offcanvas Cart -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas" aria-labelledby="cartCanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="cartCanvasLabel">سلة المشتريات</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div id="cartItemsCanvas" class="small text-muted">لسه مفيش منتجات في السلة.</div>
+    <hr>
+    <div class="d-flex justify-content-between">
+      <span>المطلوب</span>
+      <b><span id="cartFinalCanvas">0</span> جنيه</b>
+    </div>
+    <button class="btn btn-success w-100 mt-3" data-bs-dismiss="offcanvas">متابعة التسوق</button>
+  </div>
+</div>
+
+<!-- Modern Footer Section -->
+<footer class="main-footer mt-5">
+  <div class="container footer-links">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-3">
+          <i class="fas fa-leaf"></i> فرصة ثانية
+        </div>
+        <p class="small">نؤمن بأن كل ثمرة تستحق فرصة ثانية لتطعم عائلة. انضم إلينا في الحد من هدر الطعام وحماية بيئتنا.</p>
+        <div class="social-icons mt-4">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2 me-lg-auto">
+        <h6>روابط سريعة</h6>
+        <ul>
+          <li><a href="./index.html">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#shop">المتجر</a></li>
+          <li><a href="#compost">السماد</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>الدعم</h6>
+        <ul>
+          <li><a href="#">مركز المساعدة</a></li>
+          <li><a href="#">سياسة الشحن</a></li>
+          <li><a href="#">سياسة الاسترجاع</a></li>
+          <li><a href="./contact.html">اتصل بنا</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h6>اتصل بنا</h6>
+        <ul class="small">
+          <li><i class="fas fa-map-marker-alt ms-2 text-success"></i> 123 شارع الأخضر، القاهرة، مصر</li>
+          <li><i class="fas fa-phone ms-2 text-success"></i> +20 123 456 7890</li>
+          <li><i class="fas fa-envelope ms-2 text-success"></i> hello@secondchance.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom text-center">
+    <div class="container">
+      <p class="mb-0">© 2025 <span class="text-success">فرصة ثانية</span>. جميع الحقوق محفوظة. صُمم من أجل كوكب أفضل.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast-container position-fixed bottom-0 start-0 p-3">
+  <div id="liveToast" class="toast text-bg-success border-0">
+    <div class="toast-body" id="toastBody">تم</div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // =========================
+  // CONFIG: coupons + impact factors
+  // =========================
+  // كوبونات مسموح بيها (تقدري تزودي)
+const COUPONS = {
+  "GAME15": { type: "percent", value: 15 },
+  "GAME20": { type: "percent", value: 20 },
+  "GAME25": { type: "percent", value: 25 },
+  "SAVE20": { type: "fixed", value: 20 }
+};
+
+  // مفاتيح LocalStorage
+  const LS_CART = "sc_cart_v1";
+  const LS_COUPON = "sc_coupon_v1";
+  const LS_WON_COUPONS = "sc_won_coupons_v1"; // الكوبونات اللي جاية من اللعبة (اختياري)
+
+  // =========================
+  // STATE
+  // =========================
+  let cart = JSON.parse(localStorage.getItem(LS_CART) || "[]"); // [{id,name,price,qty,weight,water,co2}]
+  let appliedCoupon = localStorage.getItem(LS_COUPON) || "";
+
+  const toast = new bootstrap.Toast(document.getElementById('liveToast'));
+  const toastBody = document.getElementById("toastBody");
+
+  // UI elements
+  const impactKg = document.getElementById("impactKg");
+  const impactWater = document.getElementById("impactWater");
+  const impactCO2 = document.getElementById("impactCO2");
+
+  const cartItems = document.getElementById("cartItems");
+  const cartItemsCanvas = document.getElementById("cartItemsCanvas");
+  const cartCount = document.getElementById("cartCount");
+
+  const cartTotalEl = document.getElementById("cartTotal");
+  const cartDiscountEl = document.getElementById("cartDiscount");
+  const cartFinalEl = document.getElementById("cartFinal");
+  const cartFinalCanvasEl = document.getElementById("cartFinalCanvas");
+
+  const couponInput = document.getElementById("couponInput");
+  const couponHint = document.getElementById("couponHint");
+  const applyCouponBtn = document.getElementById("applyCouponBtn");
+  const levelBadge = document.getElementById("levelBadge");
+
+  // Pre-fill coupon input if exists
+  if (appliedCoupon) couponInput.value = appliedCoupon;
+
+  // =========================
+  // Helpers
+  // =========================
+  function fmt(n) {
+    // أرقام لطيفة (بدون كسور كتير)
+    const x = Number(n) || 0;
+    return (Math.round(x * 10) / 10).toString();
+  }
+
+  function saveCart() {
+    localStorage.setItem(LS_CART, JSON.stringify(cart));
+  }
+
+  function setToast(msg) {
+    toastBody.textContent = msg;
+    toast.show();
+  }
+
+  function findItem(id) {
+    return cart.find(i => i.id === id);
+  }
+
+  function computeImpact() {
+    let kg = 0, water = 0, co2 = 0, count = 0;
+    cart.forEach(i => {
+      count += i.qty;
+      kg += (i.weight || 0) * i.qty;
+      water += (i.water || 0) * i.qty;
+      co2 += (i.co2 || 0) * i.qty;
+    });
+    return { kg, water, co2, count };
+  }
+
+  function computeTotals() {
+    const total = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+
+    let discount = 0;
+    const code = (appliedCoupon || "").trim().toUpperCase();
+    if (code && COUPONS[code]) {
+      const c = COUPONS[code];
+      if (c.type === "percent") discount = total * (c.value / 100);
+      if (c.type === "fixed") discount = c.value;
+    }
+    discount = Math.min(discount, total);
+    const final = total - discount;
+    return { total, discount, final };
+  }
+
+  function updateLevel(kgSaved) {
+    // مستويات بسيطة حسب kg
+    if (kgSaved >= 15) return "بطل الإنقاذ 🏆";
+    if (kgSaved >= 7) return "صديق البيئة 🌍";
+    if (kgSaved >= 3) return "منقذ نشيط ⭐";
+    return "منقذ مبتدئ";
+  }
+
+  function renderCart() {
+    const { kg, water, co2, count } = computeImpact();
+    impactKg.textContent = fmt(kg);
+    impactWater.textContent = fmt(water);
+    impactCO2.textContent = fmt(co2);
+    cartCount.textContent = count;
+
+    levelBadge.textContent = updateLevel(kg);
+
+    const { total, discount, final } = computeTotals();
+    cartTotalEl.textContent = fmt(total);
+    cartDiscountEl.textContent = fmt(discount);
+    cartFinalEl.textContent = fmt(final);
+    cartFinalCanvasEl.textContent = fmt(final);
+
+    // cart list
+    if (!cart.length) {
+      cartItems.innerHTML = "لسه مفيش منتجات في السلة.";
+      cartItemsCanvas.innerHTML = "لسه مفيش منتجات في السلة.";
+      couponHint.textContent = appliedCoupon ? "ملاحظة: الكوبون موجود لكن مفيش منتجات في السلة." : "";
+      return;
+    }
+
+    const html = cart.map(i => `
+      <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+        <div>
+          <div class="fw-semibold">${i.name}</div>
+          <div class="text-muted small">${i.price} جنيه × ${i.qty}</div>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-outline-success" data-action="dec" data-id="${i.id}">-</button>
+          <button class="btn btn-sm btn-outline-success" data-action="inc" data-id="${i.id}">+</button>
+          <button class="btn btn-sm btn-outline-danger" data-action="rm" data-id="${i.id}">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    `).join("");
+
+    cartItems.innerHTML = html;
+    cartItemsCanvas.innerHTML = html;
+
+    // coupon hint
+    if (appliedCoupon && COUPONS[appliedCoupon]) {
+      const c = COUPONS[appliedCoupon];
+      couponHint.textContent = (c.type === "percent")
+        ? `✅ تم تطبيق كوبون ${appliedCoupon} (خصم ${c.value}%)`
+        : `✅ تم تطبيق كوبون ${appliedCoupon} (خصم ${c.value} جنيه)`;
+    } else if (appliedCoupon) {
+      couponHint.textContent = `⚠️ الكوبون ${appliedCoupon} غير صالح حاليًا.`;
+    } else {
+      // لو فيه كوبونات متخزنة من اللعبة
+      const won = JSON.parse(localStorage.getItem(LS_WON_COUPONS) || "[]");
+      couponHint.textContent = won.length ? `🎮 كوبونات من اللعبة: ${won.join(" - ")}` : "💡 العب في صفحة اللعبة عشان تكسب كوبون خصم!";
+    }
+  }
+
+  // =========================
+  // Add to cart
+  // =========================
+  document.querySelectorAll('.add-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const card = e.target.closest(".card-custom");
+      if (!card) return;
+
+      const item = {
+        id: card.dataset.id,
+        name: card.dataset.name,
+        price: Number(card.dataset.price || 0),
+        weight: Number(card.dataset.weight || 0),
+        water: Number(card.dataset.water || 0),
+        co2: Number(card.dataset.co2 || 0),
+        qty: 1
+      };
+// add to cart : 
+      const existing = findItem(item.id);
+      if (existing) existing.qty += 1;
+      else cart.push(item);
+
+      saveCart();
+
+      // رسالة تفاعلية
+      const { kg } = computeImpact();
+      if (item.weight > 0) {
+        setToast(`✅ تمت الإضافة! أنت الآن أنقذت ${fmt(kg)} كجم من الطعام 🎉`);
+      } else {
+        setToast(`✅ تمت الإضافة! (منتج سماد) 🌱`);
+      }
+
+      renderCart();
+    });
+  });
+
+  // =========================
+  // Cart actions (inc/dec/remove)
+  // =========================
+  function handleCartClick(e) {
+    const btn = e.target.closest("button[data-action]");
+    if (!btn) return;
+
+    const id = btn.dataset.id;
+    const action = btn.dataset.action;
+    const item = findItem(id);
+    if (!item) return;
+
+    if (action === "inc") item.qty += 1;
+    if (action === "dec") item.qty = Math.max(1, item.qty - 1);
+    if (action === "rm") cart = cart.filter(x => x.id !== id);
+
+    saveCart();
+    renderCart();
+  }
+
+  cartItems.addEventListener("click", handleCartClick);
+  cartItemsCanvas.addEventListener("click", handleCartClick);
+
+  // =========================
+  // Coupon apply
+  // =========================
+  applyCouponBtn.addEventListener("click", () => {
+    const code = (couponInput.value || "").trim().toUpperCase();
+    if (!code) {
+      appliedCoupon = "";
+      localStorage.removeItem(LS_COUPON);
+      couponHint.textContent = "تم مسح الكوبون.";
+      renderCart();
+      return;
+    }
+
+    appliedCoupon = code;
+    localStorage.setItem(LS_COUPON, appliedCoupon);
+
+    if (COUPONS[code]) {
+      setToast(`🎉 تم تطبيق كوبون ${code} بنجاح!`);
+    } else {
+      setToast(`⚠️ الكوبون ${code} غير معروف. (لسه محفوظ للتجربة)`);
+    }
+    renderCart();
+  });
+
+  // =========================
+  // Fake checkout
+  // =========================
+  document.getElementById("checkoutBtn").addEventListener("click", () => {
+    if (!cart.length) {
+      setToast("🛒 السلة فاضية. اختاري منتجات الأول.");
+      return;
+    }
+    const { final } = computeTotals();
+    setToast(`✅ طلبك (تجريبي) اتسجل! المطلوب ${fmt(final)} جنيه. شكرًا لإنقاذك للطعام 💚`);
+  });
+
+  // Initial render
+  renderCart();
+</script>
+
+</body>
+</html>

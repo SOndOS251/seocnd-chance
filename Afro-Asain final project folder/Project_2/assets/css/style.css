@@ -1,0 +1,647 @@
+/* =========================================================
+   0) Fonts (خطوط) + Global Variables (ألوان وهوية)
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+
+  --text:#1f2937;
+  --muted:#6b7280;
+
+  --radius-xl:28px;
+  --radius-lg:20px;
+  --shadow:0 10px 25px rgba(0,0,0,.06);
+  --primary-color: #4CAF50;
+  --dark-green: #2E7D32;
+  --earth-brown: #8D6E63;
+  --soft-bg: #f9fbf9;
+  --accent-orange: #FF9800;
+  --surplus-orange: #fd7e14;
+
+  --radius-xl: 24px;
+  --shadow-sm: 0 5px 15px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* =========================================================
+   1) Base Styles (إعدادات عامة)
+========================================================= */
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: var(--soft-bg);
+  scroll-behavior: smooth;
+}
+
+/* Helper */
+.section-padding{ padding:80px 0; }
+.section-title{
+  font-weight:800;
+  margin-bottom:14px;
+  color:var(--dark-green);
+  text-align:center;
+}
+.section-subtitle{
+  text-align:center;
+  color:var(--muted);
+  max-width:760px;
+  margin:0 auto 34px;
+}
+
+/* ========== 4) Cards ========== */
+.card-soft{
+  background:#fff;
+  border:0;
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+}
+.card-soft-hover{
+  transition:.25s;
+}
+.card-soft-hover:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0,0,0,.09);
+}
+
+
+/* ========== 3) Buttons ========== */
+.btn-success{ background:var(--primary-color); border-color:var(--primary-color); }
+.btn-success:hover{ background:var(--dark-green); border-color:var(--dark-green); }
+.btn-outline-success{ border-color:var(--primary-color); color:var(--primary-color); }
+.btn-outline-success:hover{ background:var(--primary-color); border-color:var(--primary-color); }
+
+
+/* icon bubble */
+.icon-bubble{
+  width:54px; height:54px;
+  border-radius:18px;
+  background: rgba(76,175,80,.12);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--dark-green);
+  font-size:1.35rem;
+}
+
+/* pill label */
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  background: rgba(76,175,80,.12);
+  color:var(--dark-green);
+  font-weight:800;
+  font-size:.85rem;
+}
+
+/* stat number */
+.stat-num{
+  font-weight:900;
+  font-size:2.2rem;
+  color:var(--dark-green);
+  line-height:1;
+}
+.stat-label{
+  color:var(--muted);
+  margin:0;
+}
+
+/* ========== 5) Hero (Wave like screenshots) ========== */
+.learn-hero{
+  background: linear-gradient(135deg, rgba(46,125,50,.95), rgba(76,175,80,.92));
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  padding:90px 0 0;
+  position:relative;
+  overflow:hidden;
+}
+.learn-hero .hero-inner{
+  padding:30px 0 40px;
+  text-align:center;
+}
+.learn-hero h1{
+  font-weight:900;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+}
+.learn-hero p{
+  color: rgba(255,255,255,.9);
+  font-size:1.1rem;
+  margin-top:12px;
+}
+.wave{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+/* ========== 6) “Did you know” block ========== */
+.didyouknow{
+  margin-top:-54px;
+  position:relative;
+  z-index:5;
+}
+.didyouknow .card-soft{
+  border-radius: var(--radius-xl);
+}
+.didyouknow .big-icon{
+  width:70px; height:70px;
+  border-radius:24px;
+  background: rgba(255,152,0,.12);
+  color: var(--accent-orange);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.8rem;
+  margin: 0 auto 14px;
+}
+
+/* ========== 7) Data highlights strip ========== */
+.highlight{
+  background: rgba(76,175,80,.08);
+  border: 1px solid rgba(76,175,80,.18);
+  border-radius: var(--radius-xl);
+  padding: 22px;
+}
+.highlight .card-soft{
+  background:rgba(255,255,255,.9);
+  border-radius: 22px;
+}
+
+/* ========== 8) Tips grid ========== */
+.tip-card{
+  height:100%;
+  border-radius: 22px;
+  padding: 22px;
+}
+.tip-card h5{ font-weight:900; }
+.tip-card p{ color:var(--muted); margin:0; }
+
+/* ========== 9) Footer (Same as index) ========== */
+.main-footer{
+  background-color:#1a1a1a;
+  color:#d1d1d1;
+  padding-top:60px;
+}
+.footer-brand{ color:var(--primary-color); font-weight:800; font-size:1.5rem; }
+.footer-links h6{
+  color:#fff; font-weight:800; margin-bottom:18px;
+  text-transform:uppercase; letter-spacing:1px; font-size:.9rem;
+}
+.footer-links ul{ list-style:none; padding:0; margin:0; }
+.footer-links ul li{ margin-bottom:10px; }
+.footer-links ul li a{
+  color:#d1d1d1; text-decoration:none; transition:.25s;
+}
+.footer-links ul li a:hover{ color:var(--primary-color); padding-right:5px; }
+
+.social-icons a{
+  width:35px; height:35px;
+  background:#333;
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  color:#fff; text-decoration:none;
+  margin-left:10px; transition:.25s;
+}
+.social-icons a:hover{ background:var(--primary-color); transform:translateY(-3px); }
+.footer-bottom{
+  background:#111;
+  padding:20px 0;
+  margin-top:50px;
+  font-size:.9rem;
+}
+
+/* ========== 10) Responsive tweaks ========== */
+@media (max-width: 768px){
+  .section-padding{ padding:60px 0; }
+  .stat-num{ font-size:2rem; }
+}
+
+/* //// */
+.font-cairo { font-family: 'Cairo', sans-serif; }
+.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+.section-padding { padding: 80px 0; }
+.section-title {
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--dark-green);
+  text-align: center;
+}
+
+/* =========================================================
+   2) Navbar (شريط التنقل الموحد)
+========================================================= */
+.navbar {
+  background: rgba(255,255,255,0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.navbar .navbar-brand {
+  font-weight: 800;
+}
+
+.navbar .nav-link {
+  font-weight: 600;
+  color: #444 !important;
+  transition: 0.25s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+/* =========================================================
+   3) Hero Sections (الهيرو)
+========================================================= */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1300&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+/* Farmers Hero */
+.farmer-hero {
+  background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(27, 67, 50, 0.85)),
+    url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=1500');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+}
+
+/* Contact Hero */
+.contact-hero {
+  background: linear-gradient(rgba(27,67,50,0.8), rgba(27,67,50,0.8)),
+    url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=1500');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+}
+
+/* Game Hero */
+.game-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=1300&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0 60px;
+  color: white;
+  text-align: center;
+}
+
+/* =========================================================
+   4) Cards (الكروت العامة)
+========================================================= */
+.card-custom {
+  border: none;
+  border-radius: 20px;
+  transition: 0.3s;
+  box-shadow: var(--shadow-sm);
+  background: white;
+  overflow: hidden;
+  height: 100%;
+}
+.card-custom:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   5) Impact Section (قسم الأرقام)
+========================================================= */
+.bg-gradient-green {
+  background: linear-gradient(135deg, var(--dark-green), var(--primary-color));
+  color: white;
+}
+
+.impact-icon { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
+
+/* =========================================================
+   6) Compost Section (دليل السماد)
+========================================================= */
+.compost-step {
+  padding: 20px;
+  border-radius: 15px;
+  background: #fff;
+  border-bottom: 4px solid var(--primary-color);
+}
+
+/* =========================================================
+   7) Compost Marquee (شريط خطوات التسميد المتحرك)
+========================================================= */
+.compost-marquee-wrap {
+  margin-top: -35px;
+  position: relative;
+  z-index: 5;
+}
+
+.compost-marquee {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(76,175,80,.22);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  overflow: hidden;
+  position: relative;
+  padding: 14px 0;
+  backdrop-filter: blur(10px);
+}
+
+.compost-marquee::before,
+.compost-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 90px;
+  z-index: 2;
+  pointer-events: none;
+}
+.compost-marquee::before {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+.compost-marquee::after {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.marquee-track {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: marqueeMove 22s linear infinite;
+  padding: 0 14px;
+}
+
+.compost-marquee:hover .marquee-track { animation-play-state: paused; }
+
+@keyframes marqueeMove {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+.marquee-card {
+  min-width: 260px;
+  background: white;
+  border: 1px solid rgba(76,175,80,.18);
+  border-radius: 18px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+  transition: transform .25s;
+}
+.marquee-card:hover { transform: translateY(-3px); }
+
+.marquee-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(76,175,80,.10);
+  color: var(--dark-green);
+  font-size: 1.4rem;
+  flex: 0 0 auto;
+}
+.marquee-title { font-weight: 700; margin: 0; }
+.marquee-text { margin: 0; font-size: .86rem; color: #6c757d; }
+
+.step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(76,175,80,.10);
+  color: var(--dark-green);
+  font-size: .8rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* =========================================================
+   8) Shop Page (المتجر)
+========================================================= */
+.product-img { width: 100%; height: 200px; object-fit: cover; background-color: #eee; }
+
+.badge-discount {
+  position: absolute; top: 10px; right: 10px;
+  background: #ff5252; color: white;
+  padding: 5px 12px; border-radius: 20px;
+  font-weight: bold; font-size: 0.8rem; z-index: 1;
+}
+
+.price-new { font-weight: 700; color: var(--dark-green); font-size: 1.2rem; }
+.price-old { text-decoration: line-through; color: #999; font-size: 0.9rem; margin-left: 5px; }
+
+.category-header {
+  border-right: 5px solid var(--primary-color);
+  padding-right: 15px;
+  margin: 40px 0 20px;
+  font-weight: bold;
+}
+
+.compost-badge {
+  background: #6D4C41;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+}
+
+/* Impact Panel */
+.impact-panel {
+  position: sticky; top: 90px;
+  border: 1px solid rgba(76,175,80,.25);
+  background: white; border-radius: 18px; padding: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.05);
+}
+.impact-metric {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 12px; border-radius: 12px;
+  background: rgba(76,175,80,.07);
+}
+.impact-metric i { color: var(--dark-green); }
+
+/* Cart Floating Button */
+.cart-fab {
+  position: fixed; bottom: 18px; right: 18px; z-index: 1050;
+  width: 56px; height: 56px; border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+.cart-count {
+  position:absolute; top:-6px; right:-6px;
+  background:#ff5252; color:#fff;
+  width:22px; height:22px; border-radius:50%;
+  font-size: 12px;
+  display:flex; align-items:center; justify-content:center;
+  border: 2px solid #fff;
+}
+
+/* =========================================================
+   9) Game Page (اللعبة)
+========================================================= */
+#game-wrapper { padding: 40px 0; }
+
+#game-container {
+  width: 100%;
+  max-width: 800px;
+  height: 550px;
+  background: white;
+  border: 4px solid var(--primary-color);
+  border-radius: 30px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  touch-action: none;
+}
+
+.bin {
+  position: absolute;
+  bottom: 30px;
+  width: 150px;
+  height: 130px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: white;
+  transition: transform 0.2s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+#bin-fresh { left: 50px; background: var(--primary-color); }
+#bin-surplus { right: 50px; background: var(--surplus-orange); }
+.bin i { font-size: 2.5rem; margin-bottom: 5px; }
+
+.food-item {
+  position: absolute;
+  font-size: 4rem;
+  cursor: grab;
+  user-select: none;
+  z-index: 50;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
+}
+
+.surplus-mark {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  background: #4a3728;
+  border-radius: 50%;
+  display: none;
+  border: 2px solid #fff;
+}
+.is-surplus .surplus-mark { display: block; }
+
+#score-panel {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 15px 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.game-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(255,255,255,0.98);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.promo-card {
+  background: #f0fdf4;
+  border: 3px dashed var(--primary-color);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+.promo-code {
+  font-size: 2.5rem;
+  color: var(--dark-green);
+  letter-spacing: 3px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   10) Contact / Farmers Forms (الفورم)
+========================================================= */
+.card-form {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  margin-top: -50px;
+  padding: 40px;
+}
+.form-control, .form-select {
+  border-radius: 12px;
+  padding: 14px;
+}
+
+/* Farmers Tabs */
+.nav-pills .nav-link {
+  color: var(--dark-green);
+  border: 2px solid var(--dark-green);
+  margin: 0 5px;
+  font-weight: 700;
+  background: transparent;
+}
+.nav-pills .nav-link.active {
+  background-color: var(--dark-green) !important;
+  color: white !important;
+}
+
+/* =========================================================
+   11) Footer (الفوتر الموحد)
+========================================================= */
+.main-footer {
+  background-color: #1a1a1a;
+  color: #d1d1d1;
+  padding-top: 60px;
+}
+.footer-brand { color: var(--primary-color); font-weight: 700; font-size: 1.5rem; }
+.footer-links h6 { color: white; font-weight: 600; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+.footer-links ul { list-style: none; padding: 0; }
+.footer-links ul li { margin-bottom: 10px; }
+.footer-links ul li a { color: #d1d1d1; text-decoration: none; transition: 0.3s; }
+.footer-links ul li a:hover { color: var(--primary-color); padding-right: 5px; }
+.social-icons a {
+  width: 35px; height: 35px;
+  background: #333;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; color: white; text-decoration: none;
+  margin-left: 10px; transition: 0.3s;
+}
+.social-icons a:hover { background: var(--primary-color); transform: translateY(-3px); }
+.footer-bottom { background: #111; padding: 20px 0; margin-top: 50px; font-size: 0.9rem; }
